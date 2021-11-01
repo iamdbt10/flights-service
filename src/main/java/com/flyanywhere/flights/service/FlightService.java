@@ -2,11 +2,16 @@ package com.flyanywhere.flights.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.flyanywhere.flights.model.Flight;
 import com.flyanywhere.flights.repository.FlightRepository;
 
+@Service
 public class FlightService {
 	
+	@Autowired
 	private FlightRepository flightRepository;
 
 	public FlightService(FlightRepository flightRepository) {
