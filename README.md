@@ -1,7 +1,7 @@
 # Springboot application for Flights service of FlyAnywhere Organization
 
 ```
-git clone https://github.com/dbturno/flights-service.git
+git clone https://github.com/iamdbt10/flights-service.git
 cd flights-service
 ./mvnw package
 java -jar target/*.jar
