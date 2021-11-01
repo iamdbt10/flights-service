@@ -3,22 +3,30 @@ package com.flyanywhere.flights.service;
 import java.util.List;
 
 import com.flyanywhere.flights.model.Flight;
+import com.flyanywhere.flights.repository.FlightRepository;
 
 public class FlightService {
+	
+	private FlightRepository flightRepository;
 
-	public List<Flight> getFlights(String string) {
-		// TODO Auto-generated method stub
-		return null;
+	public FlightService(FlightRepository flightRepository) {
+		this.flightRepository = flightRepository;
+	}
+
+	public List<Flight> getFlights(String airlineCode) {
+		if(airlineCode != null) {
+			return flightRepository.findByFlightNumberStartingWith(airlineCode);
+		}else {
+			return flightRepository.findAll();
+		}
 	}
 
 	public Flight saveFlight(Flight flight) {
-		// TODO Auto-generated method stub
-		return null;
+		return flightRepository.save(flight);
 	}
 
 	public Flight getFlightByFlightNumber(String flightNumber) {
-		// TODO Auto-generated method stub
-		return null;
+		return flightRepository.findByFlightNumber(flightNumber);
 	}
 
 }

@@ -31,7 +31,7 @@ public class FlightController {
 	
 	@GetMapping("/{flightNumber}")
 	public Flight getFlightsByFlightNumber(@PathVariable String flightNumber) {
-		log.debug("Airline Code: {}", flightNumber );
+		log.debug("Flight Number: {}", flightNumber );
 		return flightService.getFlightByFlightNumber(flightNumber);
 	}
 	
